@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #shadow1{/*单侧投影*/
+            width: 1.6in;
+            height: 1in;
+            margin-bottom: 30px;
+            background: #fb3;
+            box-shadow: 0 5px 4px -4px black;
+        }
+
+        #shadow2{/*邻边投影*/
+            width: 1.6in;
+            height: 1in;
+            margin-bottom: 30px;
+            background: #fb3;
+            box-shadow: 3px 3px 6px -3px black;
+        }
+
+        #shadow3{
+            width: 1.6in;
+            height: 1in;
+            margin-bottom: 30px;
+            background: #fb3;
+            box-shadow: 5px 0 5px -5px black,
+                        -5px 0 5px -5px black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="shadow1"></div>
+
+    <div id="shadow2"></div>
+
+    <div id="shadow3"></div>
+
+</body>
+</html>
