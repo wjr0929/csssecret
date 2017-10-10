@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background:green;
+        }
+        #clip{
+            width: 100px;
+            height:100px;
+            border: 10px solid hsla(0,0%,100%, .5);
+            background: white;
+            background-clip: padding-box;       /*背景可以入侵到边框*/
+            margin-bottom:20px;
+        }
+        #shadow{
+            margin-left:50px;
+            margin-bottom:50px;
+            width: 100px;
+            height:100px;
+            background:yellowgreen;
+            box-shadow:0 0 0 10px #655,
+                0 0 0 15px deeppink,
+                0 2px 5px 18px rgba(0,0,0,.6); /*多重边框*/
+        }
+        #outline{
+            margin-left:50px;
+            width: 200px;
+            height:100px;
+            background: #655;
+            border: 10px solid #655;
+            border-radius: 10px;
+            outline: 1px dashed white;
+            outline-offset:-15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="clip"></div>
+    <div id="shadow"></div>
+    <div id="outline"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            width: 640px;
+            height: 440px;
+        }
+
+        #img1{
+            filter: sepia(1) saturate(4) hue-rotate(295deg);
+        }
+        #img1:hover,
+        #img1:focus{
+            filter: none;
+        }
+
+        a{
+            display: inline-block;
+            background-color: hsl(335, 100%, 50%);
+            transition: .5s background;
+        }
+        #img2{
+            mix-blend-mode: luminosity;
+            vertical-align: bottom;
+        }
+        a:hover{
+            background-color: transparent;
+        }
+
+        .tinted-image{
+            width: 640px;
+            height: 440px;
+            background-size: cover;
+            background-color: hsl(335, 100%, 50%);
+            background-blend-mode: luminosity;
+            transition: .5s background-color;
+        }
+        .tinted-image:hover{
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="img1" src="img/tiger.jpg" alt=""/>
+
+    <a href="#">
+        <img id="img2" src="img/tiger.jpg" alt=""/>
+    </a>
+
+    <div class="tinted-image" style="background-image:url(img/tiger.jpg)"></div>
+
+</body>
+</html>

@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        .pie{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: yellowgreen;
-            background-image: linear-gradient(to right, transparent 50%, #655 0);
-        }
         .pie1{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             background: yellowgreen;
-            background-image: linear-gradient(to right, transparent 50%, #655 0);
+            background-image:
+                linear-gradient(to right, transparent 50%, #655 0);
         }
         .pie1:before{
             content: '';
@@ -26,27 +20,47 @@
             border-radius: 0 100% 100% 0 / 50%;
             background-color: inherit;
             transform-origin: left;
-            animation: spin 3s linear infinite,
-                        bg 6s step-end infinite;
-        }
-        @keyframes spin {
-            to {transform: rotate(.5turn);}
-        }
-        @keyframes bg {
-            50% {background: #655;}
+            transform: rotate(.1turn);
         }
 
+        @keyframes spin {
+            to { transform: rotate(.5turn); }
+        }
+        @keyframes bg {
+            50% { background: #655; }
+        }
         .pie2{
+             width: 100px;
+             height: 100px;
+             border-radius: 50%;
+             background: yellowgreen;
+             background-image:
+             linear-gradient(to right, transparent 50%, #655 0);
+         }
+        .pie2:before{
+            content: '';
+            display: block;
+            margin-left: 50%;
+            height: 100%;
+            border-radius: 0 100% 100% 0 / 50%;
+            background-color: inherit;
+            transform-origin: left;
+            animation: spin 3s linear infinite,
+                bg 6s step-end infinite;
+        }
+
+        .pie3{
             position: relative;
             width: 100px;
             line-height: 100px;
             border-radius: 50%;
             background: yellowgreen;
-            background-image: linear-gradient(to right, transparent 50%, #655 0);
+            background-image:
+            linear-gradient(to right, transparent 50%, #655 0);
             color: transparent;
             text-align: center;
         }
-        .pie2:before{
+        .pie3:before{
             content: '';
             position: absolute;
             top: 0;
@@ -57,35 +71,94 @@
             background-color: inherit;
             transform-origin: left;
             animation: spin 50s linear infinite,
-            bg 100s step-end infinite;
+                bg 100s step-end infinite;
             animation-play-state: paused;
             animation-delay: inherit;
         }
-        circle{
+
+        @keyframes fillup {
+            to { stroke-dasharray: 158 158; }
+        }
+        #svg1{
+            transform: rotate(-90deg);
+            background: yellowgreen;
+            border-radius: 50%;
+        }
+        #circle1{
             fill: yellowgreen;
             stroke: #655;
-            stroke-width: 30;
-            stroke-dasharray: 40 189;
+            stroke-width: 50;
+            stroke-dasharray: 0 158;
+            animation: fillup 5s linear infinite;
         }
+
+        #svg2{
+            width: 100px;
+            height: 100px;
+            transform: rotate(-90deg);
+            background: yellowgreen;
+            border-radius: 50%;
+        }
+        #circle2{
+            fill: yellowgreen;
+            stroke: #655;
+            stroke-width: 32;
+            stroke-dasharray: 50 100;
+        }
+
     </style>
 </head>
 <body>
-    <div class="pie"></div>
     <div class="pie1"></div>
+    <div class="pie2"></div>
 
-    <div class="pie2">20%</div>
-    <div class="pie2">60%</div>
+    <div class="pie3">20%</div>
+    <div class="pie3">60%</div>
+    <script>
+        var ps = document.getElementsByClassName('pie3');
+        for(var i = 0;i < ps.length;i++){
+            var p = parseFloat(ps[i].textContent);
+            ps[i].style.animationDelay = '-' + p + 's';
+        }
+    </script>
 
-    <svg width="100" height="100">
-        <circle r="30" cx="50" cy="50"></circle>
+    <svg id="svg1" width="100" height="100">
+        <circle id="circle1" r="25" cx="50" cy="50"></circle>
     </svg>
 
+    <svg id="svg2" viewBox="0 0 32 32">
+        <circle id="circle2" r="16" cx="16" cy="16"></circle>
+    </svg>
+
+    <div class="pie4">20%</div>
+    <div class="pie4">60%</div>
     <script>
-       var pie2 = document.getElementsByClassName('pie2');
-       for(var i = 0; i < pie2.length;i++){
-           var p = parseFloat(pie2[i].textContent);
-           pie2[i].style.animationDelay = '-' + p + 's';
-       }
+        var ps1 = document.getElementsByClassName('pie4');
+        for(var i = 0;i < ps1.length;i++){
+            ps1[i].style.width = "100px";
+            var p = parseFloat(ps1[i].textContent);
+            var NS = "http://www.w3.org/2000/svg";
+            var svg = document.createElementNS(NS, "svg");
+            var circle = document.createElementNS(NS, "circle");
+            var title = document.createElementNS(NS, "title");
+            svg.style.background = 'yellowgreen';
+            svg.style.borderRadius = '50%';
+            svg.style.transform = 'rotate(-90deg)';
+            circle.style.fill = "yellowgreen";
+            circle.style.stroke = '#655';
+            circle.style.strokeWidth = '32'
+
+            circle.setAttribute("r", 16);
+            circle.setAttribute("cx", 16);
+            circle.setAttribute("cy", 16);
+            circle.setAttribute("stroke-dasharray", p + " 100");
+            svg.setAttribute("viewBox", "0 0 32 32");
+            title.textContent = ps1[i].textContent;
+            ps1[i].textContent = '';
+            svg.appendChild(title);
+            svg.appendChild(circle);
+            ps1[i].appendChild(svg);
+        }
     </script>
 </body>
 </html>
