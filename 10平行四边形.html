@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .button{/* 行内元素对 skew 无效 */
+            margin-left: 10px;
+            margin-right: 20px;
+            transform: skewX(-45deg);
+            display: inline-block;
+            background: #6C98C5;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+        }
+        .button > div{
+            transform: skewX(45deg);
+            color: white;
+            font-weight: bold;
+        }
+
+        .button1{
+            display: inline-block;
+            position: relative;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .button1:before{
+            transform: skew(-45deg);
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #58a;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="button">
+        <div>Click me</div>
+    </a>
+
+    <!-- 伪元素 -->
+    <a href="#" class="button1">Click me</a>
+</body>
+</html>
