@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font: 250%/1.6 Baskerville, Palatino, serif;
+		}
+
+		p{
+			background: hsl(210, 13%, 60%);
+			color: hsl(210, 13%, 30%);
+			text-shadow: 0 .03em .03em hsla(0,0%,100%,.8);
+		}
+
+		p + p{
+			background: hsl(210, 13%, 40%);
+			color: hsl(210, 13%, 75%);
+			text-shadow: 0 -1px 1px black;
+		}
+
+		#hollow1{/* 真正空心字 */
+			margin-bottom: 10px;
+			background: deeppink;
+			color: white;
+			text-shadow: 1px 1px black, -1px -1px black,1px -1px black, -1px 1px black;
+		}
+		#hollow2{/* 重叠多层text-shadow实现假的1px描边 */
+			margin-bottom: 10px;
+			background: deeppink;
+			color: white;
+			text-shadow: 0 0 1px black, 0 0 1px black,
+						   0 0 1px black, 0 0 1px black,
+						   0 0 1px black, 0 0 1px black;
+		}
+
+		h1{/* svg版本 */
+			font: 200%/1 Rockwell, serif;
+			background: deeppink;
+			color: white;
+		}
+		h1 text{
+			fill: currentColor;
+		}
+		h1 svg{
+			overflow: visible;
+		}
+		h1 use{
+			stroke: black;
+			stroke-width: 6;
+			stroke-linejoin: round;
+		}
+
+		a{
+			background: #203;
+			color: white;
+			transition: 1s;
+		}
+		a:hover{
+			text-shadow: 0 0 .1em, 0 0 .3em;
+		}
+
+		span{
+			background: #203;
+			color: white;
+			transition: 1s;
+		}
+		span:hover{
+			text-shadow: 0 0 .1em, 0 0 .3em;
+			color: transparent;
+		}
+
+		h2{
+			background: #203;
+			color: white;
+			transition: 1s;
+		}
+		h2:hover{
+			filter: blur(.03em);
+		}
+
+		h3{
+			background: #58a;
+			color: white;
+			text-shadow: 0 1px hsl(0,0%,85%),
+				0 2px hsl(0,0%,80%),
+				0 3px hsl(0,0%,75%),
+				0 4px hsl(0,0%,70%),
+				0 5px hsl(0,0%,65%),
+				0 5px 10px black;
+		}
+
+		h4{
+			color: white;
+			background: hsl(0, 50%, 45%);
+			text-shadow: 1px 1px black, 2px 2px black,
+				3px 3px black, 4px 4px black,
+				5px 5px black, 6px 6px black,
+				7px 7px black, 8px 8px black;
+		}
+	</style>
+</head>
+<body>
+
+	<p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+	<p>“The only way to get rid of a temp­ta­tion is to yield to it.”</p>
+
+	<div id="hollow1">CSS</div>
+	<div id="hollow2">CSS</div>
+
+	<h1>
+		<svg width="2em" height="1.2em">
+			<use xlink:href="#css" />
+			<text id="css" y="1em">CSS</text>
+		</svg>
+	</h1>
+
+	<a>Glow</a>
+	<span>Glow</span>
+	<h2>Dizzy</h2>
+
+	<h3>CSS3d</h3>
+
+	<h4>RETRO</h4>
+
+</body>
+</html>

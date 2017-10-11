@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.circular path{
+			fill: none;
+		}
+		.circular{
+			margin: 100px;
+			width: 30em;
+			height: 30em;
+			transition: 10s linear transform;
+		}
+		.circular:hover{
+			transform: rotate(-2turn);
+		}
+		.circular svg{
+			display: block;
+			overflow: visible;
+		}
+
+		.circular1 path{
+			fill: none;
+		}
+		.circular1{
+			margin: 100px;
+			width: 30em;
+			height: 30em;
+			transition: 10s linear transform;
+		}
+		.circular1:hover{
+			transform: rotate(-2turn);
+		}
+		.circular1 svg{
+			display: block;
+			overflow: visible;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第一种方案 -->
+	<div class="circular">
+		<svg viewBox="0 0 100 100">
+			<path d="M0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+			<text>
+				<textPath xlink:href="#circle">
+					circular reasoning works bacause
+				</textPath>
+			</text>
+		</svg>
+	</div>
+
+	<!-- 第二种方案 -->
+	<div class="circular1">
+		circular reasoning works bacause
+	</div>
+	<script>
+		var el = document.getElementsByClassName("circular1")[0];
+		var NS = "http://www.w3.org/2000/svg";
+		var xlinkNS = "http://www.w3.org/1999/xlink";
+		var svg = document.createElementNS(NS, "svg");
+		var circle = document.createElementNS(NS, "path");
+		var text = document.createElementNS(NS, "text");
+		var textPath = document.createElementNS(NS, "textPath");
+		svg.setAttribute("viewBox", "0 0 100 100");
+		circle.setAttribute("d", "M0,50 a 50,50 0 1,1 0 1 z");
+		circle.setAttribute("id", "circle");
+		textPath.textContent = el.textContent;
+		textPath.setAttributeNS(xlinkNS, "xlink:href", "#circle");
+		text.appendChild(textPath);
+		svg.appendChild(circle);
+		svg.appendChild(text);
+		el.textContent = "";
+		el.appendChild(svg);
+	</script>
+</body>
+</html>
