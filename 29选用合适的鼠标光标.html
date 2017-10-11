@@ -4,12 +4,21 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<style>
-
+		:disabled, [disabled], [aria-disabled="true"]{
+			cursor: not-allowed;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: black;
+			cursor: none;
+		}
 	</style>
 </head>
 <body>
 
-
+	<button disabled>Button</button>
+	<div></div>
 
 </body>
 </html>
