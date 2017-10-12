@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.light-box{/* 不可交互版本 */
+			position: absolute;
+			z-index: 1;
+		}
+		.overlay{
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,.8);
+		}
+
+		.light-box1{/* 可交互版本 */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin: -200px;
+			box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);
+		}
+
+		dialog::backdrop {/* 模态框 */
+			background: rgba(0,0,0,.8)
+		}
+	</style>
+</head>
+<body>
+
+	<img src="img/adam-catlace.jpg" alt="" class="light-box1"/>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolor ea eligendi est repudiandae sunt vel vitae. Accusamus deserunt dolore dolorum harum ipsa nihil placeat porro quis quo, quos ratione!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolor ea eligendi est repudiandae sunt vel vitae. Accusamus deserunt dolore dolorum harum ipsa nihil placeat porro quis quo, quos ratione!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolor ea eligendi est repudiandae sunt vel vitae. Accusamus deserunt dolore dolorum harum ipsa nihil placeat porro quis quo, quos ratione!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolor ea eligendi est repudiandae sunt vel vitae. Accusamus deserunt dolore dolorum harum ipsa nihil placeat porro quis quo, quos ratione!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quas repellat repellendus similique temporibus voluptate voluptatibus. Animi assumenda autem blanditiis dolorem hic natus odio praesentium, quasi qui sequi sit voluptas!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloremque impedit numquam praesentium quasi recusandae reiciendis temporibus. Aut doloribus eos et eveniet ex in odio, pariatur quod ratione suscipit veniam?</p>
+	<!--<div class="overlay"></div>-->
+	<!--<div class="light-box">wjr</div>-->
+
+	<!--<button onclick="document.querySelector('#modal').showModal()">Click me</button>-->
+	<!--<dialog id="modal">-->
+		<!--O HAI!-->
+		<!--<button onclick="this.parentNode.close()">Close</button>-->
+	<!--</dialog>-->
+</body>
+</html>

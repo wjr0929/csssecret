@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.image-slider{
+			position: relative;
+			display: inline-block;
+		}
+		.image-slider > div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50%;
+			overflow: hidden;
+			resize: horizontal;
+		}
+		.image-slider img{
+			display: block;
+			user-select: none;
+		}
+		.image-slider > div:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 12px;
+			height: 12px;
+			cursor: ew-resize;
+			padding: 5px;
+			background: linear-gradient(-45deg, white 50%, transparent 0);
+			background-clip: content-box;
+		}
+
+
+		.image-slider1{
+			position: relative;
+			display: inline-block;
+		}
+		.image-slider1 > div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50%;
+			overflow: hidden;
+		}
+		.image-slider1 img{
+			display: block;
+			user-select: none;
+		}
+		.image-slider1 input{
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			width: 100%;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="image-slider">
+		<div>
+			<img src="img/adam-catlace-before.jpg" alt="Before"/>
+		</div>
+		<img src="img/adam-catlace.jpg" alt="After"/>
+	</div>
+
+	<div class="image-slider1">
+		<img src="img/adam-catlace-before.jpg" alt="Before"/>
+		<img src="img/adam-catlace.jpg" alt="After"/>
+	</div>
+	<script>
+		var slider = document.getElementsByClassName('image-slider1')[0];
+		var div = document.createElement('div');
+		var img = slider.querySelector('img');
+		slider.insertBefore(div, img);
+		div.appendChild(img);
+		var range = document.createElement('input');
+		range.type = 'range';
+		range.oninput = function(){
+			div.style.width = this.value + '%';
+		}
+		slider.appendChild(range);
+	</script>
+
+</body>
+</html>
