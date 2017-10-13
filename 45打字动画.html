@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+
+		@keyframes typing {
+			from { width: 0 }
+		}
+		@keyframes caret {
+			50% { border-color: transparent }
+		}
+		h1{
+			border-right: .05em solid;
+			width: 15ch;
+			animation: typing 6s steps(15),
+						caret 1s steps(1) infinite;
+			white-space: nowrap;
+			overflow: hidden;
+			font: bold 200% Consolas, Monaco, monospace;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>CSS is awesome!</h1>
+	<!--
+	<script>
+		var     h1 = document.getElementsByTagName('h1')[0]
+				len = h1.textContent.length,
+				s = h1.style;
+		s.width = len + 'ch';
+		s.animationTimingFunction = "steps(" + len + "),steps(1)";
+	</script>
+	-->
+
+</body>
+</html>

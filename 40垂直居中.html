@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		/* 在 CSS 中对元素进行水平居中是非常简单的：如果它是一个行内元素，
+就对它的父元素应用 text-align: center ；如果它是一个块级元素，就对
+它自身应用 margin: auto 。 */
+		body{
+			background: #fb3;
+			font: 100%/1.5 sans-serif;
+		}
+		p{
+			margin: 0;
+		}
+		main{
+			/*
+			position: absolute;
+			top: 50%;                       //方案1
+			left: 50%;
+			margin-top: -3em;
+			margin-left: -9em;
+			width: 18em;
+			height: 6em;
+			*/
+			/*
+			position: absolute;
+			top: calc(50% - 3em);           //方案2
+			left: calc(50% - 9em);
+			width: 18em;
+			height: 6em;
+			*/
+			/*
+			position: absolute;
+			top: 50%;                       //方案3 不需要元素的宽度
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			padding: 1em 1.5em;
+			box-sizing: border-box;
+			background: #655;
+			color: white;
+			text-align: center;
+			*/
+			/* 基于视口单位 方案4
+			width: 18em;
+			padding: 1em 1.5em;
+			margin: 50vh auto 0;        // 50%视口宽度
+			transform: translateY(-50%);
+
+			box-sizing: border-box;
+			background: #655;
+			color: white;
+			text-align: center;
+			*/
+			/* 基于flex 的方案*/
+			/* 当使用 Flexbox 时， margin: auto 不仅在水平方向上将元
+		素居中，垂直方向上也是如此 */
+			margin: auto;
+			padding: 1em 1.5em;
+			box-sizing: border-box;
+			background: #655;
+			color: white;
+
+		}
+		body{
+			display: flex;
+			min-height: 100vh;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<h1>Am I centered yet?</h1>
+		<p>Center me,please!</p>
+	</main>
+
+</body>
+</html>
