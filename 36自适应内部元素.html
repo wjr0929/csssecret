@@ -1,25 +1,28 @@
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
-	<style>
-		figure{
-			float: right;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        figure{
+            max-width: 300px;       /* 防止浏览器不支持 而设置的回退样式 */
+            width: min-content;
+            margin: auto;
+        }
+        figure > img{
+            max-width: inherit;
+        }
+    </style>
 </head>
 <body>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut autem eligendi illo impedit in, laboriosam libero natus necessitatibus nisi, odit placeat provident quaerat quisquam quod ratione sed sit velit.</p>
-
-	<figure>
-		<img src="img/adam-catlace.jpg" alt=""/>
-		<figcaption>The great Sir Adam Catlace was named after
-			Countess Ada Lovelace, the first programmer.</figcaption>
-	</figure>
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae dolorum eveniet exercitationem minima molestias possimus repellendus sunt. Aspernatur consectetur debitis deserunt, dolorum explicabo molestiae reiciendis sed soluta voluptas voluptates?</p>
-
+    <p>Let’s assume we have some text here. Bacon ipsum dolor sit amet turkey veniam shankle, culpa short ribs kevin t-bone occaecat.</p>
+    <figure>
+        <img src="img/adam-catlace.jpg" />
+        <figcaption>
+            The great Sir Adam Catlace was named after Countess Ada Lovelace, the first programmer ever.
+        </figcaption>
+    </figure>
+    <p>We also have some more text here. Et laborum venison nostrud, ut veniam sint kielbasa ullamco pancetta.</p>
 </body>
 </html>
