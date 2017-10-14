@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @keyframes spin {
+            from {
+                transform: rotate(0turn) translateY( -150px) translateY(50%) rotate(1turn);
+            }
+            to {
+                transform: rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn);
+            }
+        }
+        .path{
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: orange;
+            margin: 100px auto;
+        }
+        .avatar{
+            animation: spin 6s infinite linear;
+            width: 50px;
+            display: block;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: calc(50% - 25px) auto 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="path">
+        <img src="img/adam-catlace.jpg" alt="" class="avatar"/>
+    </div>
+
+</body>
+</html>

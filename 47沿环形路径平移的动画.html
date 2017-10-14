@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .path{
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: orange;
+            margin: 100px auto;
+        }
+        @keyframes spin {
+            to { transform: rotate(1turn); }
+        }
+        /*
+        @keyframes spin-reverse {
+            from { transform: rotate(1turn); }
+        }
+        */
+        .avatar{
+            animation: spin 6s infinite linear;
+            transform-origin: 50% 150px;
+            width: 50px;
+            margin: 0 auto;
+        }
+        .avatar > img{
+            animation: inherit;
+            animation-direction: reverse;
+            width: inherit;
+            display: block;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="path">
+        <div class="avatar">
+            <img src="img/adam-catlace.jpg" />
+        </div>
+    </div>
+
+</body>
+</html>
